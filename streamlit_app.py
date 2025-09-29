@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.title("🎈 Schedule Generator 🎈")
+st.title(" Schedule Generator ")
 
 st.write("Upload your Excel file below. The app will process it and let you download the result.")
 
