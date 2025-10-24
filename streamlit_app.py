@@ -42,11 +42,20 @@ if uploaded_file is not None:
     ##
     ##Day of month
     dateday = df['Date'].iloc[1]
-    if dateday == '1':
+    #if dateday == '1' or dateday == '21' or dateday == '31':
+        #th = 'st'
+    #elif dateday == '2' or dateday == '22':
+        #th = 'nd'
+    #elif dateday == '3' or dateday == '23':
+        #th = 'rd'
+    #else:
+        #th = 'th' ##
+        
+    if dateday in ('1', '21', '31'):
         th = 'st'
-    elif dateday == '2':
+    elif dateday in ('2', '22'):
         th = 'nd'
-    elif dateday == '3':
+    elif dateday in ('3', '23'):
         th = 'rd'
     else:
         th = 'th'
@@ -162,7 +171,7 @@ if uploaded_file is not None:
         if cell.value is None or (isinstance(cell.value, str) and cell.value.strip() == ""):
             ws.row_dimensions[cell.row].height = 39.75
 
-    ###inputs times to column A
+    ######################################3inputs times to column A############################################################3
     import openpyxl
 
     df_index = 0  # Start at the top of the DataFrame
@@ -235,7 +244,7 @@ if uploaded_file is not None:
                     cell.value = "Mentoring"
                     cell.alignment = Alignment(horizontal="left", vertical="center")
 
-    ##Room assignment
+    ################################################Room assignment######################################################
     room_numbers = [3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15, 16, 17, 18]
 
     # Step 1: Count sessions per host
